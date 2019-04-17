@@ -1,7 +1,7 @@
-import { setDataThunk } from './setDataThunk'
+import { setHouses } from './setHouses'
 import * as actions from '../Actions'
 
-describe.skip('setDataThunk', () => {
+describe.skip('setHouses', () => {
   let mockDispatch
   let mockUrl;
   beforeEach(() => {
@@ -10,7 +10,7 @@ describe.skip('setDataThunk', () => {
   })
 
   it('should dispatch isLoading(true)', () => {
-    const thunk = setDataThunk(mockUrl)
+    const thunk = setHouses(mockUrl)
     thunk(mockDispatch)
     expect(mockDispatch).toHaveBeenCalledWith(actions.isLoading(true))
   })
@@ -20,7 +20,7 @@ describe.skip('setDataThunk', () => {
       ok: false,
       statusTest: 'Something went wrong'
     }))
-    const thunk = setDataThunk(mockUrl)
+    const thunk = setHouses(mockUrl)
     await thunk(mockDispatch)
     expect(mockDispatch).toHaveBeenCalledWith(actions.hasErrored('Something went wrong'))
   })
@@ -31,7 +31,7 @@ describe.skip('setDataThunk', () => {
       ok: true,
       json: () => Promise.resolve(houses)
     }))
-    const thunk = setDataThunk(mockUrl)
+    const thunk = setHouses(mockUrl)
     await thunk(mockDispatch)
     expect(mockDispatch).toHaveBeenCalledWith(actions.addHouses(houses))
   })

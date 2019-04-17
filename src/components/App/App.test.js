@@ -1,8 +1,8 @@
 import React from 'react'
 import { App, mapStateToProps, mapDispatchToProps} from './App'
 import { shallow } from 'enzyme'
-import setDataThunk from '../../Thunks/setDataThunk'
-jest.mock('../../Thunks/setDataThunk')
+import setHouses from '../../Thunks/setHouses'
+jest.mock('../../Thunks/setHouses')
 
 describe('App', () => {
   describe('mapStateToProps', () => {
@@ -21,10 +21,10 @@ describe('App', () => {
   })
 
   describe('mapDispatchToProps', () => {
-    it('should call dispatch(setDataThunk) when a props function is triggered', () => {
+    it('should call dispatch(setHouses) when a props function is triggered', () => {
       const mockDispatch = jest.fn()
       const mockUrl = 'www.url.com'
-      const actionToDispatch = setDataThunk(mockUrl)
+      const actionToDispatch = setHouses(mockUrl)
       const mappedProps = mapDispatchToProps(mockDispatch)
       mappedProps.setData(mockUrl)
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)

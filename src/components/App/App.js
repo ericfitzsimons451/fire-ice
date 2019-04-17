@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Display from '../../components/Display/Display'
-import { setDataThunk } from '../../Thunks/setDataThunk'
+import { setHouses } from '../../Thunks/setHouses'
 import { connect } from 'react-redux'
 import Loader from '../Loader/Loader'
 
@@ -46,7 +46,7 @@ export const mapStateToProps = state => ({
 })
 
 export const mapDispatchToProps = dispatch => ({
-  setData: (url) => dispatch(setDataThunk(url))
+  setData: (url) => dispatch(setHouses(url))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

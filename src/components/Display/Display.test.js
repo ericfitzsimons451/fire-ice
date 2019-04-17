@@ -1,6 +1,6 @@
 import { App, mapDispatchToProps, mapStateToProps } from '../App/App'
-import setDataThunk from '../../Thunks/setDataThunk'
-jest.mock('../../Thunks/setDataThunk')
+import setHouses from '../../Thunks/setHouses'
+jest.mock('../../Thunks/setHouses')
 
 describe('App', () => {
   it('should mapStateToProps', () => {
@@ -16,10 +16,10 @@ describe('App', () => {
     expect(results).toEqual(updatedState)
   })
 
-  it('should dispatch setDataThunk when props.setData is called', () => {
+  it('should dispatch setHouses when props.setData is called', () => {
     const mockDispatch = jest.fn()
     const mockUrl = 'www.url.com'
-    const actionToDispatch = setDataThunk(mockUrl)
+    const actionToDispatch = setHouses(mockUrl)
     const mappedProps = mapDispatchToProps(mockDispatch)
     mappedProps.setData(mockUrl)
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)

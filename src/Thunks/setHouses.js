@@ -1,6 +1,6 @@
 import { isLoading, addHouses, hasErrored } from '../Actions'
 
-export const setDataThunk = (url) => {
+export const setHouses = (url) => {
   return async (dispatch) => {
     dispatch(isLoading(true))
     try {
@@ -16,4 +16,4 @@ export const setDataThunk = (url) => {
     }
   }
 } 
-export default setDataThunk
+export default setHouses
