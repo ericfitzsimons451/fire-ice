@@ -33,9 +33,7 @@ export class App extends Component {
       );
 
     } else {
-      return (
-      <Loader />
-      )
+      return (<Loader />)
     }
   }
 

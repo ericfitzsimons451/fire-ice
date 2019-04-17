@@ -1,4 +1,4 @@
-const dataReducer = (state={}, action) => {
+const dataReducer = (state=[], action) => {
   switch (action.type) {
     case 'ADD_HOUSES':
       return action.houses

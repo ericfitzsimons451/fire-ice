@@ -13,7 +13,7 @@ describe('isLoading', () => {
 })
 
 describe('hasErrored', () => {
-  it('should take in a message and return an object', () => {
+  it('should take in a message and return an object with a message and a type', () => {
     const message = "wrds"
     const results = actions.hasErrored(message)
     const expected = {
@@ -25,7 +25,7 @@ describe('hasErrored', () => {
 })
 
 describe('addHouses', () => {
-  it('should take in an array and return an object', () => {
+  it('should take in an array of house objects and return an object w a type and a houses array', () => {
     const mockArray = [{}, {}]
     const results = actions.addHouses(mockArray)
     const expected = {
